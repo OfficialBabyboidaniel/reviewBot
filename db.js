@@ -5,9 +5,15 @@ const path = require('path');
 // Create or connect to database
 const db = new Database(path.join(__dirname, 'bot.db'));
 
-// Add the new column if it doesn't exist (for existing databases)
+// Add the new columns if they don't exist (for existing databases)
 try {
     db.exec('ALTER TABLE reviews ADD COLUMN is_anonymous INTEGER DEFAULT 1');
+} catch (error) {
+    // Column already exists or table doesn't exist yet, ignore
+}
+
+try {
+    db.exec('ALTER TABLE reviews ADD COLUMN rating INTEGER DEFAULT 5');
 } catch (error) {
     // Column already exists or table doesn't exist yet, ignore
 }
@@ -18,13 +24,14 @@ db.exec(`
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         user_id TEXT NOT NULL,
         content TEXT NOT NULL,
+        rating INTEGER DEFAULT 5,
         is_anonymous INTEGER DEFAULT 1,
         timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
     )
 `);
 
 // Database functions
-const insertReview = db.prepare('INSERT INTO reviews (user_id, content, is_anonymous) VALUES (?, ?, ?)');
+const insertReview = db.prepare('INSERT INTO reviews (user_id, content, rating, is_anonymous) VALUES (?, ?, ?, ?)');
 const getReviews = db.prepare('SELECT * FROM reviews ORDER BY timestamp DESC');
 const getReviewsByUser = db.prepare('SELECT * FROM reviews WHERE user_id = ? ORDER BY timestamp DESC');
 
