@@ -1,0 +1,22 @@
+{
+    "name": "anon-review-bot",
+    "version": "1.0.0",
+    "description": "Anonymous review Discord bot",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "dev": "node index.js"
+    },
+    "keywords": [
+        "discord",
+        "bot",
+        "review"
+    ],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "discord.js": "^14.14.1",
+        "better-sqlite3": "^9.2.2",
+        "dotenv": "^16.3.1"
+    }
+}
