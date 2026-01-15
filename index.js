@@ -86,7 +86,7 @@ client.on('interactionCreate', async (interaction) => {
 
         try {
             // Store in database with rating
-            db.insertReview.run(interaction.user.id, reviewContent, rating, isAnonymous ? 1 : 0);
+            await db.insertReview.run(interaction.user.id, reviewContent, rating, isAnonymous ? 1 : 0);
 
             // Create embed based on anonymity setting
             const embed = {
@@ -129,7 +129,7 @@ client.on('interactionCreate', async (interaction) => {
 
     if (commandName === 'reviews') {
         try {
-            const reviews = db.getReviews.all().slice(0, 5); // Get last 5 reviews
+            const reviews = (await db.getReviews.all()).slice(0, 5); // Get last 5 reviews
 
             if (reviews.length === 0) {
                 return await interaction.reply({ content: 'No reviews found!', ephemeral: true });
@@ -160,7 +160,7 @@ client.on('interactionCreate', async (interaction) => {
 
     if (commandName === 'summary') {
         try {
-            const allReviews = db.getReviews.all();
+            const allReviews = await db.getReviews.all();
 
             if (allReviews.length === 0) {
                 return await interaction.reply({ content: 'No reviews found to summarize!', ephemeral: true });
