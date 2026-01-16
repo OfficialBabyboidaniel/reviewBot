@@ -1,7 +1,7 @@
 {
     "name": "anon-review-bot",
     "version": "1.0.0",
-    "description": "Anonymous review Discord bot",
+    "description": "Anonym recensions Discord-bot",
     "main": "index.js",
     "scripts": {
         "start": "node index.js",

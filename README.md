@@ -1,40 +1,40 @@
-# Anonymous Review Bot
+# Anonym Recensionsbot
 
-A Discord bot that allows users to submit anonymous reviews and feedback.
+En Discord-bot som låter användare skicka in anonyma recensioner och feedback.
 
-## Features
+## Funktioner
 
-- Submit anonymous or named reviews with 1-5 star ratings
-- View recent reviews with star ratings displayed
-- Overall review summary with average rating and distribution chart
-- SQLite database storage
-- Embedded messages with star emojis
+- Skicka in anonyma eller namngivna recensioner med 1-5 stjärnbetyg
+- Visa senaste recensionerna med stjärnbetyg
+- Övergripande sammanfattning med medelbetyg och fördelningsdiagram
+- SQLite-databaslagring
+- Inbäddade meddelanden med stjärnemojis
 
-## Commands
+## Kommandon
 
-- `/review <message> <rating> [anonymous]` - Submit a review with star rating (1-5)
-- `/reviews` - View the 5 most recent reviews with ratings
-- `/summary` - View overall review statistics and rating distribution
-- `/help` - Show available commands
+- `/recension <meddelande> <betyg> [anonym]` - Skicka in en recension med stjärnbetyg (1-5)
+- `/recensioner` - Visa de 5 senaste recensionerna med betyg
+- `/sammanfattning` - Visa övergripande recensionsstatistik och betygfördelning
+- `/hjälp` - Visa tillgängliga kommandon
 
-## Examples
+## Exempel
 
-- `/review message:Great service! rating:5` - Anonymous 5-star review
-- `/review message:Good experience rating:4 anonymous:false` - Named 4-star review
-- `/review message:Could be better rating:2 anonymous:true` - Anonymous 2-star review
-- `/summary` - Shows average rating and distribution chart
+- `/recension meddelande:Fantastisk service! betyg:5` - Anonym 5-stjärnig recension
+- `/recension meddelande:Bra upplevelse betyg:4 anonym:false` - Namngiven 4-stjärnig recension
+- `/recension meddelande:Kunde vara bättre betyg:2 anonym:true` - Anonym 2-stjärnig recension
+- `/sammanfattning` - Visar medelbetyg och fördelningsdiagram
 
-## Setup
+## Installation
 
-1. Install dependencies: `npm install`
-2. Add your Discord bot token to `.env`
-3. Run the bot: `npm start`
+1. Installera beroenden: `npm install`
+2. Lägg till din Discord bot-token i `.env`
+3. Kör botten: `npm start`
 
-## Bot Permissions Needed
+## Nödvändiga Bot-behörigheter
 
-- Send Messages
-- Manage Messages (to delete original review messages)
-- Embed Links
-- Read Message History
+- Skicka meddelanden
+- Hantera meddelanden (för att radera ursprungliga recensionsmeddelanden)
+- Bädda in länkar
+- Läsa meddelandehistorik
 
-Your bot is ready to use!
+Din bot är redo att användas!

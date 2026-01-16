@@ -1,50 +1,50 @@
 # Discord Bot Deployment TODO
 
-## Docker Compose on Ubuntu Server
+## Docker Compose på Ubuntu Server
 
-### Prerequisites
-- [ ] Ubuntu server with Docker and Docker Compose installed
-- [ ] Domain/IP address for the server
-- [ ] Discord bot token and client ID
+### Förutsättningar
+- [ ] Ubuntu-server med Docker och Docker Compose installerat
+- [ ] Domän/IP-adress för servern
+- [ ] Discord bot-token och klient-ID
 
-### Deployment Steps
+### Deployment-steg
 
-1. **Server Setup**
-   - [ ] Install Docker: `sudo apt update && sudo apt install docker.io docker-compose`
-   - [ ] Add user to docker group: `sudo usermod -aG docker $USER`
-   - [ ] Reboot server
+1. **Serverinstallation**
+   - [ ] Installera Docker: `sudo apt update && sudo apt install docker.io docker-compose`
+   - [ ] Lägg till användare i docker-gruppen: `sudo usermod -aG docker $USER`
+   - [ ] Starta om servern
 
-2. **Upload Bot Files**
-   - [ ] Copy bot files to server (via git clone, scp, or rsync)
-   - [ ] Navigate to bot directory
+2. **Ladda upp bot-filer**
+   - [ ] Kopiera bot-filer till servern (via git clone, scp eller rsync)
+   - [ ] Navigera till bot-katalogen
 
-3. **Environment Configuration**
-   - [ ] Create `.env` file with:
+3. **Miljökonfiguration**
+   - [ ] Skapa `.env`-fil med:
      ```
-     DISCORD_TOKEN=your_bot_token_here
+     DISCORD_TOKEN=din_bot_token_här
      CLIENT_ID=1460365779642875904
      ```
 
-4. **Deploy with Docker Compose**
-   - [ ] Run: `docker-compose up -d`
-   - [ ] Check logs: `docker-compose logs -f`
-   - [ ] Verify bot is online in Discord
+4. **Deploya med Docker Compose**
+   - [ ] Kör: `docker-compose up -d`
+   - [ ] Kontrollera loggar: `docker-compose logs -f`
+   - [ ] Verifiera att botten är online i Discord
 
-5. **Maintenance Commands**
-   - [ ] View logs: `docker-compose logs discord-bot`
-   - [ ] Restart bot: `docker-compose restart discord-bot`
-   - [ ] Update bot: `docker-compose down && docker-compose up -d --build`
-   - [ ] Stop bot: `docker-compose down`
+5. **Underhållskommandon**
+   - [ ] Visa loggar: `docker-compose logs discord-bot`
+   - [ ] Starta om bot: `docker-compose restart discord-bot`
+   - [ ] Uppdatera bot: `docker-compose down && docker-compose up -d --build`
+   - [ ] Stoppa bot: `docker-compose down`
 
-### Files Ready for Deployment
+### Filer redo för deployment
 - ✅ Dockerfile
 - ✅ docker-compose.yml
 - ✅ .gitignore
-- ✅ Bot source code
-- ✅ Database setup
+- ✅ Bot-källkod
+- ✅ Databasinställning
 
-### Alternative Options (if Docker doesn't work)
-- [ ] Railway.app (free tier)
-- [ ] Render.com (free tier)
+### Alternativa alternativ (om Docker inte fungerar)
+- [ ] Railway.app (gratis nivå)
+- [ ] Render.com (gratis nivå)
 - [ ] DigitalOcean App Platform
-- [ ] AWS EC2 with PM2
+- [ ] AWS EC2 med PM2
