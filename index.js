@@ -30,7 +30,7 @@ const commands = [
         )
         .addBooleanOption(option =>
             option.setName('anonym')
-                .setDescription('Skicka anonymt (standard: true)')
+                .setDescription('Skicka anonymt (standard: sant)')
                 .setRequired(false)
         ),
     new SlashCommandBuilder()
@@ -222,7 +222,7 @@ client.on('interactionCreate', async (interaction) => {
             fields: [
                 {
                     name: '/recension <meddelande> <betyg> [anonym]',
-                    value: 'Skicka in en recension med 1-5 stjärnbetyg. Sätt anonym till false för att visa ditt namn (standard: true)',
+                    value: 'Skicka in en recension med 1-5 stjärnbetyg. Sätt anonym till falskt för att visa ditt namn (standard: sant)',
                     inline: false
                 },
                 {
@@ -241,7 +241,7 @@ client.on('interactionCreate', async (interaction) => {
                     inline: false
                 }
             ],
-            description: '**Exempel:**\n`/recension meddelande:Fantastisk service! betyg:5` - Anonym 5-stjärnig recension\n`/recension meddelande:Bra men kan förbättras betyg:3 anonym:false` - Namngiven 3-stjärnig recension'
+            description: '**Exempel:**\n`/recension meddelande:Fantastisk service! betyg:5` - Anonym 5-stjärnig recension\n`/recension meddelande:Bra men kan förbättras betyg:3 anonym:falskt` - Namngiven 3-stjärnig recension'
         };
 
         await interaction.reply({ embeds: [embed] });

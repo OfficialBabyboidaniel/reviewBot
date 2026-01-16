@@ -20,8 +20,8 @@ En Discord-bot som låter användare skicka in anonyma recensioner och feedback.
 ## Exempel
 
 - `/recension meddelande:Fantastisk service! betyg:5` - Anonym 5-stjärnig recension
-- `/recension meddelande:Bra upplevelse betyg:4 anonym:false` - Namngiven 4-stjärnig recension
-- `/recension meddelande:Kunde vara bättre betyg:2 anonym:true` - Anonym 2-stjärnig recension
+- `/recension meddelande:Bra upplevelse betyg:4 anonym:falskt` - Namngiven 4-stjärnig recension
+- `/recension meddelande:Kunde vara bättre betyg:2 anonym:sant` - Anonym 2-stjärnig recension
 - `/sammanfattning` - Visar medelbetyg och fördelningsdiagram
 
 ## Installation
